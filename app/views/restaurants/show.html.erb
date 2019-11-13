@@ -2,3 +2,8 @@
 
 <p><%= @restaurant.address %></p>
 <p><%= @restaurant.phone_number %></p>
+
+<%= link_to edit_restaurant_path(@restaurant) do %>
+<p><i class="fas fa-edit"></i> Edit details</p>
+
+<% end %>

@@ -33,8 +33,11 @@ class RestaurantsController < ApplicationController
     redirect_to restaurant_path(@restaurant)
   end
 
+  # DELETE /restaurants/:id
   def destroy
+    @restaurant.destroy
 
+    redirect_to restaurants_path
   end
 
   private

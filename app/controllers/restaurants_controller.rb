@@ -23,11 +23,14 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
-
+    render :new
   end
 
+  # PATCH  /restaurants/:id
   def update
+    @restaurant.update(restaurant_params)
 
+    redirect_to restaurant_path(@restaurant)
   end
 
   def destroy

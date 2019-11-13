@@ -3,8 +3,12 @@
 <!-- List restaurants  -->
 <ul>
   <% @restaurants.each do |r| %>
-    <li><%= link_to r.name, restaurant_path(r) %>・<%= link_to restaurant_path(r), method: :delete, data: { confirm: "Are you sure you want to delete '#{r.name}'?" } do %>
-   <i class="far fa-trash-alt"></i><% end %>
+    <li>
+      <%= link_to r.name, restaurant_path(r) %>
+      ・
+      <%= link_to restaurant_path(r), method: :delete, data: { confirm: "Are you sure you want to delete '#{r.name}'?" } do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
     </li>
   <% end %>
 </ul>

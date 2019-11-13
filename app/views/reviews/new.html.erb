@@ -1,0 +1,12 @@
+<h1>Write a review for '<%= @restaurant.name %>'</h1>
+<%= simple_form_for([@restaurant, @review]) do |f| %>
+  <%= f.input :content, as: :text,
+              input_html: { :cols => 5, :rows => 5 },
+              label: 'Your review',
+              error: 'Review content is mandatory, please specify one' %>
+  <%= f.input :rating,
+              collection: @rating_range,
+              label: 'How many stars? (0-5)',
+              error: 'Must rate between 0-5 stars' %>
+  <%= f.button :submit %>
+<% end %>
